@@ -1,0 +1,26 @@
+
+header{
+
+    
+  
+/* Half height */
+height: 50%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+
+}
+body, html {
+    height: 100%;
+}
+
+
+#Restiko{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQhxGfgTPbEZWDMu3-qTIyMR3iTfHvBSl6QwkkXF2VaIt3DnlR&s");
+    background-repeat: no-repeat;
+    
+    border: solid;
+    margin: 20px;
+}
