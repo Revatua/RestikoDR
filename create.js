@@ -41,4 +41,8 @@ function createRestiko()
         console.log(record.getId());
       });
 
+      setTimeout(function()
+      { 
+        location.reload(); 
+        }, 1000);
 }

@@ -30,3 +30,9 @@ body, html {
     display: none;
     
 }
+.card-header{
+    background-image:url("https://thumbs.gfycat.com/SeriousDelightfulGoitered-size_restricted.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+    width: auto;
+}
