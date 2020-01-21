@@ -3,7 +3,7 @@ var base = new Airtable({apiKey: 'keyAtAFrpEpIhMVwH'}).base('app3Tm4gwhICcWsqb')
 
 var modalTemplate =
 
-    '<div id="###modaleRestiko###"class="modal-body">' +
+    '<div id="c"class="modal-body">' +
     '<h4>Ce que j\'ai aimé</h4>' +
     '<div class="like">###like###</div>' +
     '<h4>Ce que j\'ai fait</h4>'+
@@ -18,8 +18,6 @@ var modalTemplate =
     '<div class="Objectifs">###Quels sont les objectifs ?###</div>' +
     '<h4>Qu\'est-ce qui m\'a manqué ?</h4>'+
     '<div class="forget">###Qu\'est-ce qui m\'a manqué ?###</div>' +
-    '<h4>Personne (Initiales)</h4>'+
-    '<div class="personnal">###Personne (Initiales)###</div>' +
     '<h4>A la place du formateur?</h4>'+
     '<div class="formateur">###formateur###</div>'+
     '<h4>Objectif Atteins ou pas ?</h4>'+
@@ -29,7 +27,8 @@ var modalTemplate =
 '</div>';
 
 
-function retrieveData(){
+//mes record restiko stocker dans des var, pour remplacer mes marqueur par les champs de mes restiko
+//pour les injecter dans mon nouveau template qui reprend l'ancien et avoir la bonne donné affiché.
     base('RESTIKO').select({
         // Selecting the first 3 records in Grid view:
         maxRecords: 100,
@@ -39,17 +38,32 @@ function retrieveData(){
     
         records.forEach(function(record) {
             console.log('Retrieved', record.get('Date'));
-            var Date = record.get("Date")
-            var nameRestiko = record.get("Ce que j'ai aimé");
-            var likeRestiko = record.get("Ce que j'ai fait");
+            
+            var likeRestiko = record.get("Ce que j'ai aimé");
+            var doRestiko = record.get("Ce que j'ai fait");
+            var learnRestiko = record.get("Ce que j'ai appris");
+            var newUsed = record.get("Ce que j'ai utilisé de nouveaux");
+            var problemsRestiko =record.get("Problématiques  rencontrées");
+            var objectifs= record.get("Quels sont les objectifs ?");
+            var missRestiko= record.get("Qu'est-ce qui m'a manqué ?");
+            var formateurRestiko = record.get("Qu'est-ce que tu ferais à la place du formateur ?")
+            var objectiftarget = record.get("Objectif Atteins ou pas ?");
+            var noteRestiko = record.get("Notre sur la journée sur /5");
+
         
+            var newTemplate = modalTemplate.replace("###like###",likeRestiko); 
+                newTemplate = newTemplate.replace("###Ce que j\'aifait###",doRestiko);
+                newTemplate = newTemplate.replace("###Ce que j\'ai appris###",learnRestiko);
+                newTemplate = newTemplate.replace("###Ce que j\'ai utilisé de nouveaux###",newUsed);
+                newTemplate = newTemplate.replace("###Problématiques rencontrées###",problemsRestiko);
+                newTemplate = newTemplate.replace("###Quels sont les objectifs ?###",objectifs)
+                newTemplate = newTemplate.replace("###Qu\'est-ce qui m\'a manqué ?###",missRestiko);
+                newTemplate = newTemplate.replace("###formateur###",formateurRestiko);
+                newTemplate = newTemplate.replace("###Objectif Atteins ou pas ?###",objectiftarget);
+                newTemplate = newTemplate.replace("###Notre sur la journée sur /5###",noteRestiko);
         
-            var newTemplate = modalTemplate.replace("###like###",nameRestiko); 
-            new
-            // newTemplate = newteplate.replace("###Ce que j\'aifait###",likeRestiko);
-           
-            $("#modaleRestiko").prepend(newTemplate);
-        
+            $("#modaleRestiko").html(newTemplate);
+       
         });
     
         // To fetch the next page of records, call `fetchNextPage`.
@@ -61,8 +75,38 @@ function retrieveData(){
         if (err) { console.error(err); return; }
     });
         
-}
+// pour mon boutton avec onclick= retrieved('###id###') récupérer avec chaque boutton chaque retiko avec l'id.
+function retrieved(id){
+    base('RESTIKO').find(id, function(err, record) {
+        if (err) { console.error(err); return; }
+        console.log('Retrieved', record.id);
 
+        var likeRestiko = record.get("Ce que j'ai aimé");
+        var doRestiko = record.get("Ce que j'ai fait");
+        var learnRestiko = record.get("Ce que j'ai appris");
+        var newUsed = record.get("Ce que j'ai utilisé de nouveaux");
+        var problemsRestiko =record.get("Problématiques  rencontrées");
+        var objectifs= record.get("Quels sont les objectifs ?");
+        var missRestiko= record.get("Qu'est-ce qui m'a manqué ?");
+        var formateurRestiko = record.get("Qu'est-ce que tu ferais à la place du formateur ?")
+        var objectiftarget = record.get("Objectif Atteins ou pas ?");
+        var noteRestiko = record.get("Notre sur la journée sur /5");
+
+    
+        var newTemplate = modalTemplate.replace("###like###",likeRestiko); 
+            newTemplate = newTemplate.replace("###Ce que j\'aifait###",doRestiko);
+            newTemplate = newTemplate.replace("###Ce que j\'ai appris###",learnRestiko);
+            newTemplate = newTemplate.replace("###Ce que j\'ai utilisé de nouveaux###",newUsed);
+            newTemplate = newTemplate.replace("###Problématiques rencontrées###",problemsRestiko);
+            newTemplate = newTemplate.replace("###Quels sont les objectifs ?###",objectifs)
+            newTemplate = newTemplate.replace("###Qu\'est-ce qui m\'a manqué ?###",missRestiko);
+            newTemplate = newTemplate.replace("###formateur###",formateurRestiko);
+            newTemplate = newTemplate.replace("###Objectif Atteins ou pas ?###",objectiftarget);
+            newTemplate = newTemplate.replace("###Notre sur la journée sur /5###",noteRestiko);
+    
+        $("#modaleRestiko").html(newTemplate);
+    });
+}
 
 
 

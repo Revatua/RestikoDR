@@ -10,7 +10,7 @@ var TemplateRestiko=
         '<p>###date###</p>'+
     '</div>'+
         '<p class="card-text">Mes comptes rendu de chaque jour passer à la formation</p>'+
-        '<button type="button" class="btn btn-primary" data-toggle="modal"onclick = retrieveData() data-target="#exampleModalLong">'+
+        '<button type="button" class="btn btn-primary" onclick="retrieved(\'###id###\')" data-toggle="modal"data-target="#exampleModalLong">'+
             'Détails'+
         '</button>'+
     '</div>'+
@@ -30,8 +30,8 @@ base('RESTIKO').select({
 
        var date = record.get("Date");
        var newTemplate = TemplateRestiko.replace("###date###", date);
-
-    $('#RestikoDR').prepend(newTemplate);
+        newTemplate = newTemplate.replace("###id###",record.id)
+    $('#RestikoDR').append(newTemplate);
 
     
     });

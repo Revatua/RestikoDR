@@ -17,18 +17,15 @@
 
 <body>
     <header>
-      
+        
         <div class="card text-center">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Restiko</a>
+                        <a class="nav-link active"onclick="viewRestiko()" href="#">Restiko</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Veille</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Liens</a>
+                        <a id="createRestiko"class="nav-link" onclick="newRestiko()"href="#">Créer</a>
                     </li>
                 </ul>
             </div>
@@ -43,15 +40,70 @@
                 <!-- <div id="Restiko" class="card-body"> 
                  <h5 class="card-title">Restiko DR</h5>
                 <p class="card-text"></p>
-                <button type="button" class="btn btn-primary" data-toggle="modal"onclick = retrieveData() data-target="#exampleModalLong">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                     Détails
                 </button>
             </div>
             <div class="card-body ">
                 <p>date</p>
-            </div> 
+            </div> -->
+        </div> 
+        <!-- RestikoCreate -->
+        <div id="newRestiko" class="container">
+            <form type="text">
+                <div class="form-group"> <!-- Date input -->
+                    <label class="control-label" for="date">Date</label>
+                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="date"/>
+                  </div>
+                <div class="form-group">
+                  <label for="Restiko">Ce que j'ai aimé</label>
+                  <input type="text" class="form-control " id="restikoLike" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="restiko">Ce que j'ai fait</label>
+                  <input type="text" class="form-control" id="restikoDoit">
+                </div>
+                <div class="form-group">
+                    <label for="restiko">Ce que j'ai appris</label>
+                    <input type="text" class="form-control" id="restikoLearn">
+                  </div>
+                <div class="form-group">
+                    <label for="Restiko">Ce que j'ai utilisé de nouveaux</label>
+                    <input type="text" class="form-control" id="restikoNew" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="restiko">Problématiques rencontrées</label>
+                    <input type="text" class="form-control" id="restikoProblems">
+                  </div>
+                  <div class="form-group">
+                    <label for="Restiko">Quels sont les objectifs?</label>
+                    <input type="text" class="form-control" id="restikoTarget" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="restiko">Qu'est-ce qui m'a manqué?</label>
+                    <input type="text" class="form-control" id="restikoMiss">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Qu'est-ce que tu ferais à la place du formateur?</label>
+                    <input type="text" class="form-control" id="restikoFormateur" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="restiko">Objectif Atteins ou pas ?</label>
+                    <input type="text" class="form-control" id="targetRestiko">
+                  </div>
+                  <div class="form-group">
+                    <label for="restiko">Notre sur la journée sur / 5</label>
+                    <input type="text" class="form-control" id="restikoNote">
+                  </div>
+                  <div onclick="createRestiko(), viewRestiko(), initShadow()" class="btn btn-primary col-md-6">Submit</div>
+                </div>
+               
+              </form>
         </div>
-        </div> -->
+       
     </header>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -93,9 +145,13 @@
                 </div>
             </div>
         </div>
+        
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="create.js"></script>
+    <script src="Show&hide.js"></script>
     <script src="modal.js"></script>
     <script src="myjavascript.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

@@ -22,5 +22,11 @@ body, html {
     background-repeat: no-repeat;
     
     border: solid;
+    border-radius: 30px;
     margin: 20px;
+}
+
+#newRestiko{
+    display: none;
+    
 }
