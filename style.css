@@ -1,38 +1,68 @@
-
-header{
-
-    
-  
-/* Half height */
-height: 50%;
-
-/* Center and scale the image nicely */
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
+/* font */
+* {
+    font-family: 'Gelasio', serif;
 
 }
-body, html {
+
+header {
+    /* Half height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+body,
+html {
     height: 100%;
 }
 
 
-#Restiko{
+#Restiko {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQhxGfgTPbEZWDMu3-qTIyMR3iTfHvBSl6QwkkXF2VaIt3DnlR&s");
     background-repeat: no-repeat;
-    
+
     border: solid;
     border-radius: 30px;
     margin: 20px;
 }
 
-#newRestiko{
-    display: none;
-    
+
+
+/* indentifiant Restiko */
+#idenRestiko {
+    background-color: rgba(31, 23, 23, 0.027);
+    padding: 100px;
+    margin-top: -250px;
 }
-.card-header{
-    background-image:url("https://thumbs.gfycat.com/SeriousDelightfulGoitered-size_restricted.gif");
-    background-repeat: no-repeat;
-    background-size: 100% 100px;
-    width: auto;
+
+/* display */
+
+#newRestiko {
+    display: none;
+
+}
+
+
+
+.card-header {
+    background-color: rgba(22, 21, 21, 0.849);
+
+
+}
+/* submit restiko */
+.newRestiko{
+    background-color: red;
+}
+
+/* TitreRestiko */
+.titreRestiko {
+    font-family: 'Gelasio', serif;
+
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 200px;
 }

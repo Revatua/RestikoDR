@@ -2,7 +2,7 @@ var Airtable = require('airtable');
 var base = new Airtable({apiKey: 'keyAtAFrpEpIhMVwH'}).base('app3Tm4gwhICcWsqb');
 
 function createRestiko()
-{
+{ 
 
     var dateRestiko = $("#date").val();
     var likeRestiko = $("#restikoLike").val();

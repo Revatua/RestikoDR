@@ -26,7 +26,7 @@ base('RESTIKO').select({
     records.forEach(function(record) {
         
         
-       //pour tout les champs du record je l'est rentre dans des var ! 
+       //pour récupéré la dat et l'id pour mes cartes.
 
        var date = record.get("Date");
        var newTemplate = TemplateRestiko.replace("###date###", date);
@@ -36,16 +36,7 @@ base('RESTIKO').select({
     
     });
    
-   
-             
-     
-       
-       
-
-          
-        
-        
-    
+ 
     // To fetch the next page of records, call `fetchNextPage`.
     // If there are more records, `page` will get called again.
     // If there are no more records, `done` will get called.
@@ -54,8 +45,3 @@ base('RESTIKO').select({
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
-
-
-// C'est good ça marche Tini ! 
-
-
