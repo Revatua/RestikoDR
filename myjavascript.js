@@ -31,7 +31,8 @@ base('RESTIKO').select({
        var date = record.get("Date");
        var newTemplate = TemplateRestiko.replace("###date###", date);
         newTemplate = newTemplate.replace("###id###",record.id)
-    $('#RestikoDR').append(newTemplate);
+    
+        $('#RestikoDR').prepend(newTemplate);
 
     
     });

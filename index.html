@@ -9,19 +9,15 @@
   <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="" href="">
+  <link rel="stylesheet" href="/asset/css/style.css">
   <script src="airtable.browser.js"></script>
 
   <title>Hello, world!</title>
 </head>
 
 <body>
-  <!-- identification -->
-
-
-  <header>
-
+<header>
+<!-- carte nav bar  -->
     <div id="cardRestiko" class="card text-center">
       <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
@@ -55,65 +51,9 @@
                 <p>date</p>
             </div> -->
       </div>
-      <!-- RestikoCreate -->
-      <div id="newRestiko" class="container card-body center">
-        <form type="text">
-          <div class="form-group">
-            <!-- Date input -->
-            <label class="control-label" for="date">Date</label>
-            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="date" />
-          </div>
-          <div class="form-group">
-            <label for="Restiko">Ce que j'ai aimé</label>
-            <input type="text" class="form-control " id="restikoLike" aria-describedby="emailHelp">
-          </div>
-          <div class="form-group">
-            <label for="restiko">Ce que j'ai fait</label>
-            <input type="text" class="form-control" id="restikoDoit">
-          </div>
-          <div class="form-group">
-            <label for="restiko">Ce que j'ai appris</label>
-            <input type="text" class="form-control" id="restikoLearn">
-          </div>
-          <div class="form-group">
-            <label for="Restiko">Ce que j'ai utilisé de nouveaux</label>
-            <input type="text" class="form-control" id="restikoNew" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="restiko">Problématiques rencontrées</label>
-            <input type="text" class="form-control" id="restikoProblems">
-          </div>
-          <div class="form-group">
-            <label for="Restiko">Quels sont les objectifs?</label>
-            <input type="text" class="form-control" id="restikoTarget" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="restiko">Qu'est-ce qui m'a manqué?</label>
-            <input type="text" class="form-control" id="restikoMiss">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Qu'est-ce que tu ferais à la place du formateur?</label>
-            <input type="text" class="form-control" id="restikoFormateur" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="restiko">Objectif Atteins ou pas ?</label>
-            <input type="text" class="form-control" id="targetRestiko">
-          </div>
-          <div class="form-group">
-            <label for="restiko">Notre sur la journée sur / 5</label>
-            <input type="text" class="form-control" id="restikoNote">
-          </div>
-          <a onclick="createRestiko()" class="btn btn-dark col-md-12">Créer</a>
-      </div>
-      </form>
-    </div>
-
   </header>
   
-  <!-- identifiant -->
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
@@ -159,8 +99,8 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="modal.js"></script>
-  <script src="myjavascript.js"></script>
+  
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -170,6 +110,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+    <script src="modal.js"></script>
+    <script src="myjavascript.js"></script>
 </body>
 
 </html>

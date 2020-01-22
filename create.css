@@ -1,6 +1,9 @@
 *{
     font-family: 'Gelasio', serif;
 }
-.cardRestiko{
+.card-header{
     background-color: rgba(0, 0, 0, 0.849);
+}
+#createRestiko:hover{
+background-color:rgba(10, 69, 233, 0.911);
 }
